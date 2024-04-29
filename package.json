@@ -35,7 +35,7 @@
     "coverage": "stencil test --spec --e2e --coverage"
   },
   "devDependencies": {
-    "@stencil/core": "^4.17.1",
+    "@stencil/core": "^4.7.0",
     "@types/jest": "^29.5.6",
     "@types/node": "^16.18.11",
     "jest": "^29.7.0",
