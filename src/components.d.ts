@@ -5,9 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+export { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
 export namespace Components {
+    interface EmersonBadgeComponent {
+        "color": BadgeColor;
+        "position": BadgePosition;
+        "text": string;
+        "variant": BadgeVariant;
+    }
     interface MaterialInput {
-        "class": string;
         "label": string;
         "placeholder": string;
     }
@@ -27,6 +34,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
+    }
+    var HTMLEmersonBadgeComponentElement: {
+        prototype: HTMLEmersonBadgeComponentElement;
+        new (): HTMLEmersonBadgeComponentElement;
+    };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
     var HTMLMaterialInputElement: {
@@ -40,13 +53,19 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "emerson-badge-component": HTMLEmersonBadgeComponentElement;
         "material-input": HTMLMaterialInputElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface EmersonBadgeComponent {
+        "color"?: BadgeColor;
+        "position"?: BadgePosition;
+        "text"?: string;
+        "variant"?: BadgeVariant;
+    }
     interface MaterialInput {
-        "class"?: string;
         "label"?: string;
         "placeholder"?: string;
     }
@@ -65,6 +84,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "emerson-badge-component": EmersonBadgeComponent;
         "material-input": MaterialInput;
         "my-component": MyComponent;
     }
@@ -73,6 +93,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
