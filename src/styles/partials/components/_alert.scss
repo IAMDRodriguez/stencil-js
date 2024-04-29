@@ -1,0 +1,111 @@
+@import './../palette';
+@import './../variables';
+
+$border-radius: $borderradius-s-default;
+$emergency: $alertemergency;
+$secondary: $alertsecondary;
+$success: $alertsuccess;
+$info: $alertinfo;
+$warning: $alertwarning;
+$critical: $alertcritical;
+
+$emergencytext: $alertemergencytext;
+$secondarytext: $alertsecondarytext;
+$successtext: $alertsuccesstext;
+$infotext: $alertinfotext;
+$warningtext: $warmtext;
+$criticaltext: $warmtext;
+
+$text: $dark-primary-text;
+
+.alert {
+    width: 100%;
+    padding: .8rem .4rem;
+    margin: 1rem 0 1rem 0;
+    border-radius: $border-radius;
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 1rem;
+    align-items: flex-start;
+  
+    .alert-icon,
+    .alert-message {
+      line-height: 22px;
+      vertical-align: middle;
+    }
+  
+    .alert-icon {
+      padding: 0 0.25rem;
+      flex: 0 0 18px;
+    }
+  
+    .alert-message {
+      flex-grow: 1;
+      margin: 0;
+      padding: 0 0.5rem;
+      word-break: break-word;
+    }
+  
+    .alert-dismiss {
+      flex: 0 0 22px;
+      font-weight: bold;
+      font-size: 24px;
+      color: $text;
+      line-height: 24px;
+      cursor: pointer;
+    }
+  
+    &.alert-emergency {
+      background: $emergency;
+      color: $emergencytext;
+  
+      .alert-dismiss:hover {
+        color: $emergencytext;
+      }
+    }
+  
+    &.alert-secondary {
+      background: $secondary;
+      color: $secondarytext;
+  
+      .alert-dismiss:hover {
+        color: $secondarytext;
+      }
+    }
+  
+    &.alert-success {
+      background: $success;
+      color: $successtext;
+  
+      .alert-dismiss:hover {
+        color: $successtext;
+      }
+    }
+  
+    &.alert-info {
+      background: $info;
+      color: $infotext;
+  
+      .alert-dismiss:hover {
+        color: $infotext;
+      }
+    }
+  
+    &.alert-warning {
+      background: $warning;
+      color: $criticaltext;
+  
+      .alert-dismiss:hover {
+        color: $warningtext;
+      }
+    }
+  
+    &.alert-critical {
+      background: $critical;
+      color: $criticaltext;
+  
+      .alert-dismiss:hover {
+        color: $criticaltext;
+      }
+    }
+  }

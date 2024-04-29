@@ -1,0 +1,94 @@
+//small buttons, fab, snackbar, chips
+
+// BUTTONS
+
+.mat-mdc-outlined-button,
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button
+   {
+  border-radius: $borderradius-s-default !important;
+  padding: $largebuttonpadding !important;
+}
+
+// SNACKBAR
+.mat-snack-bar-container {
+  border-radius: $borderradius-s-default !important;
+}
+
+.mat-snack-bar-container {
+  button.mat-button {
+    border-radius: $borderradius-s-default;
+  }
+}
+
+// CHIPS
+//  .mat-chip {
+//     border-radius: $borderradius-s-default !important;
+//  }
+
+
+//M - cards,data table
+
+// CARD
+
+//   TABLE
+.mat-table {
+  border-radius: $borderradius-m-default;
+  //overflow:hidden !important;
+}
+
+.mat-card {
+  border-radius: $borderradius-m-default !important;
+}
+
+// MENU, DROPDOWN
+.mat-menu-panel {
+  border-radius: $borderradius-s-default !important;
+}
+
+//L- Drawer, dialog windows, side sheets.
+// DRAWER
+
+// BOTTOM SHEET
+.mat-bottom-sheet-container {
+  border-radius: $largebottomborderradius !important;
+}
+
+// DIALOG WINDOW
+.mat-dialog-container {
+  border-radius: $borderradius-xl-default !important;
+  // border-radius: $largetopborderradius !important;
+}
+
+// FORM FIELD, TEXT AREA, SELECTION DROPDOWN,
+.mat-form-field-outline-start {
+  border-radius: $smallborderstart !important;
+}
+.mat-form-field-outline-end {
+  border-radius: $smallborderend !important;
+}
+
+// TEXT FIELDS
+
+::ng-deep .mat-form-field-outline-start {
+  border-radius: $smallborderstart !important;
+}
+
+::ng-deep .mat-form-field-outline-end {
+  border-radius: $smallborderend !important;
+}
+
+// DRAWER OR SIDE NAVIGATION bottom
+::ng-deep .mat-drawer.mat-drawer-end {
+  --mat-sidenav-container-shape: 12px;
+  min-width: 700px;
+}
+
+.mat-bottom-sheet-container {
+  border-radius: $largebottomborderradius !important;
+}
+
+::ng-deep.mdc-tooltip.mat-mdc-tooltip {
+  font-size: 10px;
+}

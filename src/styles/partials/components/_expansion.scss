@@ -1,0 +1,23 @@
+@import './../palette';
+
+.mat-expansion-panel-header {
+    padding: 0 24px 0 0 !important;
+    border-bottom: 1px solid $border-color;
+    border-radius: 0px;
+    margin-bottom: 24px;
+}
+
+.mat-expansion-panel {
+    background: transparent !important;
+}
+
+// mat-panel title is same as mat-typography subheading-2/h3 (but emerson blue)
+// mat-panel-title{
+//     color: map-get($map: $mat-emersonprimary, $key: 900) !important;
+//     font-size: 18px;
+//     font-weight: 400;
+// }
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important;
+}

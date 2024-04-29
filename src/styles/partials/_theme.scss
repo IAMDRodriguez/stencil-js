@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'scaffolding';
+@import 'palette';
+@import 'components/components';
+// @import 'components/portals';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined';
+
+// @font-face {
+//   font-family: 'HCo Whitney SSm';
+//   src: url('../../assets/fonts/whitneyssm-book-web.woff2');
+// }
+
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body-header {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+.cdk-overlay-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+#asterisk {
+  color: map-get($map: $mat-critical, $key: 600);
+  font-weight: bold;
+}
+
+mat-hint {
+  font-size: 10.5px;
+  color: map-get($mat-unknowngray, 700);
+}

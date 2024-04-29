@@ -1,53 +1,295 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/stencil-test.esm.js"></script>
-    <script nomodule src="/build/stencil-test.js"></script>
-  </head>
-  <body>
-    <emerson-banner>Banner text, description, helper information for the user, etc.</emerson-banner>
-    <div style="display: flex; gap: 0.5rem; padding-top: 5rem; flex-wrap: wrap;">
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <material-button primary label="Primary" high__emphasis></material-button>
-        <material-button primary icon="add" label="Primary" high__emphasis></material-button>
-        <material-button primary icon="add" high__emphasis></material-button>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Stencil Component Starter</title>
 
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <material-button primary label="Primary" medium__emphasis></material-button>
-        <material-button primary icon="add" label="Primary" medium__emphasis></material-button>
-        <material-button primary icon="add" medium__emphasis></material-button>
-      </div>
-      
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <material-button primary label="Primary" low__emphasis></material-button>
-        <material-button primary icon="add" label="Primary" low__emphasis></material-button>
-        <material-button primary icon="add" low__emphasis></material-button>
-      </div>
-      
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <material-button secondary label="Secondary" high__emphasis></material-button>
-        <material-button secondary icon="add" label="Secondary" high__emphasis></material-button>
-        <material-button secondary icon="add" high__emphasis></material-button>
-      
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <material-button secondary label="Secondary" medium__emphasis></material-button>
-        <material-button secondary icon="add" label="Secondary" medium__emphasis></material-button>
-        <material-button secondary icon="add" medium__emphasis></material-button>
-      
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <material-button secondary label="Secondary" low__emphasis></material-button>
-        <material-button secondary icon="add" label="Secondary" low__emphasis></material-button>
-        <material-button secondary icon="add" low__emphasis></material-button>
-      
-      </div>
-    </div>
-  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script type="module" src="/build/stencil-test.esm.js"></script>
+  <script nomodule src="/build/stencil-test.js"></script>
+</head>
+
+<body>
+  <div style="display: flex; justify-content: center; gap: 0.5rem; padding-top: 5rem; flex-wrap: wrap;">
+
+  <div style="display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint withtitle darkmode="false" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint withtitle darkmode="false">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="false" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="false" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="false" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="false" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="false" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="false" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #585858; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint withtitle darkmode="true" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint withtitle darkmode="true">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="true" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="true" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="true" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="true" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="true" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withtitle darkmode="true" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+  <div style="display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint withimage withtitle darkmode="false" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint withimage withtitle darkmode="false">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="false" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="false" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="false" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="false" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="false" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="false" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #585858; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint withimage withtitle darkmode="true" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint withimage withtitle darkmode="true">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="true" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="true" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="true" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="true" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="true" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage withtitle darkmode="true" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+  
+  <div style="display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint darkmode="false" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint darkmode="false">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="false" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="false" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="false" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="false" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="false" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="false" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #585858; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint darkmode="true" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint darkmode="true">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="true" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="true" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="true" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="true" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="true" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint darkmode="true" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+  <div style="display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint withimage darkmode="false" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint withimage darkmode="false">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="false" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="false" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="false" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="false" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="false" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="false" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #585858; flex-direction: column; gap: 10px; padding: 10px;">
+    <emerson-hint withimage darkmode="true" vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+
+    <emerson-hint withimage darkmode="true">
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="true" vertical withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="true" withlink>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="true" closable vertical>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="true" closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="true" vertical withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  
+    <emerson-hint withimage darkmode="true" withlink closable>
+      Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
+    </emerson-hint>
+  </div>
+
+</body>
+
 </html>
