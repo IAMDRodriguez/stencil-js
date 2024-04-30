@@ -32,6 +32,10 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface SideDrawer {
+        "description": string;
+        "header": string;
+    }
 }
 declare global {
     interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
@@ -52,10 +56,17 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLSideDrawerElement extends Components.SideDrawer, HTMLStencilElement {
+    }
+    var HTMLSideDrawerElement: {
+        prototype: HTMLSideDrawerElement;
+        new (): HTMLSideDrawerElement;
+    };
     interface HTMLElementTagNameMap {
         "emerson-badge-component": HTMLEmersonBadgeComponentElement;
         "material-input": HTMLMaterialInputElement;
         "my-component": HTMLMyComponentElement;
+        "side-drawer": HTMLSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
@@ -83,10 +94,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface SideDrawer {
+        "description"?: string;
+        "header"?: string;
+    }
     interface IntrinsicElements {
         "emerson-badge-component": EmersonBadgeComponent;
         "material-input": MaterialInput;
         "my-component": MyComponent;
+        "side-drawer": SideDrawer;
     }
 }
 export { LocalJSX as JSX };
@@ -96,6 +112,7 @@ declare module "@stencil/core" {
             "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;
         }
     }
 }
