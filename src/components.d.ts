@@ -6,75 +6,82 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface EmersonHint {
+        "closable": boolean;
+        "darkmode": boolean;
+        "horizontal": boolean;
+        "link": string;
+        "vertical": boolean;
+        "withimage": boolean;
+        "withlink": boolean;
+        "withtitle": boolean;
+    }
+    interface EmersonIcon {
+        "name": string;
+        "size": string;
+    }
     interface MaterialInput {
-        "class": string;
         "label": string;
         "placeholder": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
+    interface HTMLEmersonHintElement extends Components.EmersonHint, HTMLStencilElement {
+    }
+    var HTMLEmersonHintElement: {
+        prototype: HTMLEmersonHintElement;
+        new (): HTMLEmersonHintElement;
+    };
+    interface HTMLEmersonIconElement extends Components.EmersonIcon, HTMLStencilElement {
+    }
+    var HTMLEmersonIconElement: {
+        prototype: HTMLEmersonIconElement;
+        new (): HTMLEmersonIconElement;
+    };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
     var HTMLMaterialInputElement: {
         prototype: HTMLMaterialInputElement;
         new (): HTMLMaterialInputElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
+        "emerson-hint": HTMLEmersonHintElement;
+        "emerson-icon": HTMLEmersonIconElement;
         "material-input": HTMLMaterialInputElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface EmersonHint {
+        "closable"?: boolean;
+        "darkmode"?: boolean;
+        "horizontal"?: boolean;
+        "link"?: string;
+        "vertical"?: boolean;
+        "withimage"?: boolean;
+        "withlink"?: boolean;
+        "withtitle"?: boolean;
+    }
+    interface EmersonIcon {
+        "name"?: string;
+        "size"?: string;
+    }
     interface MaterialInput {
-        "class"?: string;
         "label"?: string;
         "placeholder"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
+        "emerson-hint": EmersonHint;
+        "emerson-icon": EmersonIcon;
         "material-input": MaterialInput;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
+            "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

@@ -1,0 +1,48 @@
+@import './../palette';
+
+.iconleftholder{
+  margin-right: 8px;
+}
+
+.iconrightholder{
+  margin-left: 8px;
+}
+
+.linkedbutton{
+  text-decoration: underline;
+}
+
+.inlinebutton{
+  padding: 0px !important;
+}
+
+#cm-header {
+  .mat-toolbar .example-icon .mdc-button__label {
+    font-size: 14px;
+    display: contents;
+  }
+}
+ 
+::ng-deep .mat-mdc-outlined-button:not(:disabled){
+  border-color: $primarycomponentcolor !important;
+}
+
+.mat-button-toggle-appearance-standard{
+  color: map-get($map: $mat-info, $key: 700) !important;
+  background-color: $mat-defaultcomponent-background !important;
+}
+
+.mat-button-toggle-checked{
+  color: $light-primary-text !important;
+  background-color: map-get($map: $mat-info, $key: 700) !important;
+}
+
+.mat-button-toggle-disabled{
+  color: map-get($map: $mat-unknowngray, $key: 400) !important;
+  background-color: transparent !important;
+}
+
+
+// .togglebutton {
+//   color: map-get($map: $mat-info, $key: 700);
+// }

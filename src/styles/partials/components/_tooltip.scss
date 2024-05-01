@@ -1,0 +1,8 @@
+::ng-deep .mat-mdc-tooltip .mdc-tooltip__surface{
+    background-color: map-get($mat-emersonbase, e-navy) !important;
+}
+
+::ng-deep .mat-mdc-slider .mdc-slider__value-indicator {
+    background-color: map-get($mat-emersonbase, e-navy) !important;
+    opacity: 1 !important;
+}

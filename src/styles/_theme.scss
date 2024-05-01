@@ -1,0 +1,78 @@
+// @use '@angular/material' as mat;
+@import 'partials/theme';
+
+$app-primary: mat.define-palette($mat-info, 700);
+$app-accent: mat.define-palette($mat-info, 700, 500, 600);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$app-error: mat.define-palette($mat-critical, 600);
+
+
+// Name	        Description
+// headline-1	  One-off header, usually at the top of the page (e.g. a hero header).
+// headline-2	  One-off header, usually at the top of the page (e.g. a hero header).
+// headline-3	  One-off header, usually at the top of the page (e.g. a hero header).
+// headline-4	  One-off header, usually at the top of the page (e.g. a hero header).
+// headline-5	  Section heading corresponding to the <h1> tag.  H1/Noto Sans/Display Bold (700)/24px/Line Height: Auto 
+// headline-6	  Section heading corresponding to the <h2> tag.  H2/Noto Sans/Semi Bold (600)/24px/Line Height: Auto
+// subtitle-1	  Section heading corresponding to the <h3> tag.  H3/Noto Sans/Display Regular (400)/24px/Auto
+// subtitle-2	  Section heading corresponding to the <h4> tag.  H4/Noto Sans/Semi Bold (600)/20px/Line Height: Auto
+//                                                              H5/Noto Sans/Medium (500)/18px/Line Height: Auto
+//                                                              H6/Noto Sans/semi-bold (600)/16px/Line Height: Auto
+// body-1	      Base body text.                                 Body-1/Noto Sans/Medium (500)/14px/Line Height: 140%
+// body-2	      Secondary body text.                            Body-2/Noto Sans/Display Bold (700)/14px/Line Height: 120% //changed to display medium 500
+//                                                              Body-3/Noto Sans/Display Bold ??? /12px/Line Height: 140%
+// caption	    Smaller body and hint text.                     Caption/Noto Sans/Medium (500)/12px/Line Height: 140%
+//                                                              Button-label-small/noto sans/display semi-bold (600)/12px/Line height: Auto
+// button	      Buttons and anchors.                            Button-label-medium/noto sans/display semi-bold (600)/16px/Line height: Auto
+//                                                              Button-label-Large/noto sans/display semi-bold (600)/18px/Line height: Auto
+
+
+$app-typography: mat.define-typography-config(
+  $font-family: '"Noto Sans", Roboto, "Helvetica Neue", sans-serif',
+  $headline-1:    mat.define-typography-level(96px, 96px, 300, $letter-spacing: -0.05em),
+  $headline-2:    mat.define-typography-level(60px, 60px, 400, $letter-spacing: -0.02em),
+  $headline-3:    mat.define-typography-level(48px, 48px, 400, $letter-spacing: -0.005em),
+  $headline-4:    mat.define-typography-level(34px, 40px, 400),
+  $headline-5:    mat.define-typography-level(24px, 32px, 700), 
+  $headline-6:    mat.define-typography-level(24px, 32px, 600),
+  $subtitle-1:    mat.define-typography-level(24px, 28px, 400),
+  $subtitle-2:    mat.define-typography-level(16px, 24px, 500),
+  $body-1:        mat.define-typography-level(14px, 20px, 500),
+  $body-2:        mat.define-typography-level(14px, 20px, 500),
+  $caption:       mat.define-typography-level(12px, 20px, 500),
+  $button:        mat.define-typography-level(16px, 16px, 600),
+);
+
+$app-emersontheme: mat.define-light-theme((
+  color: (
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-error,
+  ), 
+  typography: $app-typography,
+));
+
+ 
+@include mat.core();
+@include mat.typography-hierarchy($app-typography);
+@include mat.core-theme($app-emersontheme);
+@include mat.all-component-themes($app-emersontheme);
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+
+@mixin buttons-theme($app-emersontheme) {
+  $primary: $app-primary;
+  .mat-stroked-button.mat-primary {
+    border: solid 1px mat-color($primary);
+  }
+}
+
+//////////////////////////////////////////////////
+//////////////// ANGULAR DEFAULTS ////////////////
+//////////////// TO FOLLOW OTHERS ////////////////
+//////////////////////////////////////////////////

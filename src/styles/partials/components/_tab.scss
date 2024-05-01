@@ -1,0 +1,137 @@
+@import '../palette';
+
+.mat-tab-group {
+  margin-bottom: 0px;
+  padding-left: 20px;
+}
+
+.mat-mdc-tab-nav-bar {
+  margin-bottom: 0px;
+  padding-left: 20px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.maintab {
+  background-color: map-get($map: $mat-emersonprimary, $key: 900);
+}
+
+.mat-toolbar {
+  z-index: 10;
+  padding-left: 16px;
+  position: relative;
+}
+
+.mat-tab-label {
+  // padding: 0 36px 0 12px !important;
+  min-width: 120px !important;
+}
+
+.mat-mdc-tab-links .mat-mdc-tab-link {
+  padding: 0 20px 0 20px !important;
+  min-width: 20px !important;
+}
+
+.mat-mdc-tab-links .mat-mdc-tab-link:hover {
+  // padding: 0 36px 0 12px !important;
+  min-width: 20px !important;
+  text-decoration: none;
+}
+
+.mat-mdc-tab-links .mat-tab-label-active {
+  // padding: 0 36px 0 12px !important;
+  text-decoration: none;
+  opacity: 1 !important;
+}
+
+// .mat-tab-label > .mat-badge-hidden {
+//     padding: 0 12px 0 12px !important;
+//     min-width: 120px !important;
+// }
+
+/* make the active opacity obvious so that it becomes distinguishable */
+.mat-tab-label .mat-tab-label-active {
+  opacity: 1 !important;
+}
+
+.mat-tab-label-active {
+  opacity: 1 !important;
+}
+
+.secondarytab .mat-mdc-tab-links a:hover {
+  color: inherit !important;
+}
+
+nav.mat-mdc-tab-nav-bar.mat-mdc-tab-header.secondarytab {
+  background-color: transparent ;
+}
+
+mat-tab-group.secondarytab{
+  background-color: transparent ;
+  // background-color: $mat-defaultcomponent-background;
+}
+
+/* REMOVE or CHECK   in the implementation of common styles */
+
+/* change to accent color please */
+.mat-tab-label-active .secondaryLabel {
+  // color: #00AA7E !important;
+  color: map-get($map: $mat-emersonsecondary, $key: 400) !important;
+}
+
+/* add a small separation from the labels so it becomes more visually distinguishable */
+// .mat-mdc-tab-list {
+//   margin-bottom: 1px;
+// }
+
+/* oblongize */
+.stretch-badge > .mat-badge-content {
+  width: auto !important;
+  min-width: 11px !important;
+  border-radius: 11px !important;
+  right: -22px !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  margin-left: 2px !important;
+}
+
+:host .primarytab {
+  top: 56;
+  z-index: 0;
+  position: relative;
+  position: -webkit-sticky; /* macOS/iOS Safari */
+  width: 100%;
+}
+:host .secondarytab {
+  top: 104;
+  z-index: 0;
+  position: relative;
+  position: -webkit-sticky; /* macOS/iOS Safari */
+  width: 100%;
+}
+
+.primarytab span, .secondarytab span {
+  font-size: 14px;
+}
+/*
+.secondarytab {
+    top: 54;
+    z-index: 1000;
+    position: sticky;
+    position: -webkit-sticky;
+} */
+
+.mat-badge-hidden .mat-badge-content:empty {
+  display: inline-block;
+  width: 6px;
+  border-radius: 3px;
+}
+
+.maintablight {
+  // background-color: map-get($map: $mat-emersonprimary, $key: 900);
+  background-color: $mat-defaultcomponent-background;
+}
+
+.mat-tab-label-active .primaryLabel {
+  // color: #00AA7E !important;
+  color: map-get($map: $mat-emersonprimary, $key: 900) !important;
+}

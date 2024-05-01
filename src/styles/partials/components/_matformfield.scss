@@ -1,0 +1,64 @@
+@import './../palette';
+
+// overriding default validation and required fields, this will update the form fields outline on invalid fields
+::ng-deep .mat-form-field-appearance-outline.invalid .mat-form-field-outline-start {
+    border-color: map-get($map: $mat-critical, $key: 600) !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.invalid .mat-form-field-outline-end{
+    border-color: map-get($map: $mat-critical, $key: 600) !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.invalid .mat-form-field-outline-gap{
+    border-color: map-get($map: $mat-critical, $key: 600) !important;
+}
+
+// when the form is empty/focused/etc, the placeholder/label should float, remove the top border
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-should-float.invalid .mat-form-field-outline-gap {
+    border-color: map-get($map: $mat-critical, $key: 600) !important;
+    border-top: 0px;
+}
+
+// ::ng-deep .mat-optgroup-label{
+.mat-optgroup-label{
+    letter-spacing: 0.25px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: $dark-primary-text !important;
+}
+
+.mat-option-multiple{
+    margin-left: 12px;
+}
+
+.mat-pseudo-checkbox-checked {
+    background: map-get($map: $mat-emersonsecondary, $key: 400) !important;
+}
+
+// add background color to formfield
+// :host ::ng-deep .mat-form-field-flex {
+//     background: $mat-formfield-background;
+//     border-radius: 4px !important;
+//   }
+
+// add background color to formfield
+// :host ::ng-deep .mat-form-field-disabled .mat-form-field-flex {
+//     background: transparent;
+// }
+
+// [correct] add background color to formfield
+:host ::ng-deep .mat-form-field-outline {
+    background: $mat-formfield-background;
+    border-radius: 4px !important;
+} 
+
+:host ::ng-deep .mat-form-field-disabled .mat-form-field-outline {
+        background: transparent;
+} 
+
+.mat-form-field-required-marker{
+    color: map-get($map: $mat-critical, $key: 600) !important;
+  }
+.mat-mdc-form-field-required-marker {
+    color: map-get($map: $mat-critical, $key: 600) !important;
+  }

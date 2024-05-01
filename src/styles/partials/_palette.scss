@@ -1,0 +1,292 @@
+$dark-primary-text: #2d383f;
+$light-primary-text: #ffffff;
+$light-primary-background: #f7f7f7;
+$dark-primary-background: #2d383f;
+$border-color: #dcdcdc;
+$warmtext: #683804; //used for alert
+
+// colors are sourced from 
+// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=004b8d&secondary.color=00aa7e
+// input the primary and secondary colors to check if hues are correct https://material.io/inline-tools/color/ 
+// -------
+
+// $mat-hover: map-get($map: $mat-emersonprimary, $key: 50);
+// $mat-selected: map-get($map: $mat-emersonprimary, $key: 100);
+
+$mat-emersonprimary: (
+    50 : #e0f3fd,
+    100 : #b0e0f8,
+    200 : #7dccf3,
+    300 : #4ab8ed,
+    400 : #24aaea,
+    500 : #009be6,
+    600 : #008ed7,
+    700 : #007bc3,
+    800 : #006aaf,
+    900 : #007EC5, //primary emerson color
+    A100 : #8eaeff,
+    A200 : #5b8aff,
+    A400 : #2865ff,
+    A700 : #0e53ff,
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $dark-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: $dark-primary-text,
+      A200: $dark-primary-text,
+      A400: $light-primary-text,
+      A700: $light-primary-text,
+    )
+  );
+  
+  $mat-emersonsecondary: (
+    50 : #def3ec,
+    100 : #b0e1cf,
+    200 : #7cceb1,
+    300 : #43ba92,
+    400 : #00aa7e, //secondary emerson color
+    500 : #009a69,
+    600 : #008d5d,
+    700 : #007d4e,
+    800 : #006d41,
+    900 : #005127,
+    A100 : #adffda,
+    A200 : #7affc3,
+    A400 : #47ffac,
+    A700 : #2dffa0,
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $light-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: $dark-primary-text,
+      A200: $dark-primary-text,
+      A400: $dark-primary-text,
+      A700: $dark-primary-text,
+    )
+  );
+  
+  $mat-emersonred: (
+    50 : #fde3e8,
+    100 : #fab8c5,
+    200 : #f58ba0,
+    300 : #ef5c7b,
+    400 : #e93a60,
+    500 : #e31847,
+    600 : #d31245, // emerson red color
+    700 : #be0a43,
+    800 : #ab0041,
+    900 : #88003c,
+    A100 : #ffe1e4,
+    A200 : #ffaeb6,
+    A400 : #ff7b88,
+    A700 : #ff6271,
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: $dark-primary-text,
+      A200: $light-primary-text,
+      A400: $light-primary-text,
+      A700: $light-primary-text,
+    )
+  );
+  
+  $mat-emersonbase: (
+    e-navy : #17345C,
+    e-blueBrandPrimary : #004B8D,
+    e-primary : #007EC5,
+    e-highlight : #05AFF8,
+    primary-hover : #0E98E5,
+    primary-pressed : #9CDEFF,
+    e-light : #C2EBFF, 
+    e-highlight-subtly : #F0F7FB,
+    e-gray : #7B9BAA,
+    e-greenBrandSecondary : #00805A,
+    e-greenBrandPrimary : #00573D,
+    contrast: (
+      e-navy: $light-primary-text,
+      e-blueBrandPrimary: $light-primary-text,
+      e-primary: $light-primary-text,
+      e-highlight: $dark-primary-text,
+      primary-hover: $dark-primary-text,
+      primary-pressed: $dark-primary-text,
+      e-light: $dark-primary-text,
+      e-highlight-subtly: $dark-primary-text,
+      e-gray: $dark-primary-text,
+      e-greenBrandSecondary: $light-primary-text,
+      e-greenBrandPrimary: $light-primary-text,
+    )
+  );
+
+
+  $mat-info: (
+    50 : #E1F5FF,
+    100 : #C2EBFF,
+    200 : #9CDEFF,
+    300 : #70D0FF,
+    400 : #43C2FF,
+    500 : #05AFF8, // highlight
+    600 : #0E98E5, // hover
+    700 : #007EC5, // primary
+    800 : #0764A8,
+    900 : #004b8d, // brand
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $light-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+    )
+  );
+
+  $mat-good: (
+    50 : #E4FBF6,
+    100 : #C2F0E5,
+    200 : #97E1D0,
+    300 : #61CFB5,
+    400 : #0EB791,
+    500 : #00A07B, // good
+    600 : #008D5D,
+    700 : #00805A, // brandsecondary
+    800 : #006A4F,
+    900 : #00573D, // brand
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+    )
+  );
+
+  $mat-advise-warning: (
+    50 : #FFF8DF,
+    100 : #FFEBAF,
+    200 : #FFDF7B,
+    300 : #FFD342,
+    400 : #FFC800, // advice
+    500 : #FFBE00,
+    600 : #FFB000,
+    700 : #F79428,
+    800 : #FF8A00, // warning
+    900 : #FF6800, 
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $dark-primary-text,
+      600: $dark-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+    )
+  );
+
+  $mat-critical: (
+    50 : #FFEAED,
+    100 : #FFCACF,
+    200 : #F09594,
+    300 : #E66B6B,
+    400 : #F04645, 
+    500 : #F43128,
+    600 : #E52527, // critical
+    700 : #D31723,
+    800 : #C60B1B, 
+    900 : #B8000D, 
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $light-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+    )
+  );
+
+  $mat-unknowngray: (
+    50 : #F5F5F5,
+    100 : #EFEFEF,
+    200 : #DFDFDF,
+    300 : #CFCFCF,
+    400 : #C0C0C0, 
+    500 : #B0B0B0,
+    600 : #A0A0A0, 
+    700 : #808080, // unknown
+    800 : #585858, 
+    900 : #404040, 
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $dark-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+    )
+  );
+
+
+$primarycomponentcolor: map-get($mat-info, 700);
+$defaultactivecomponentcolor: map-get($mat-unknowngray, 700);
+$mat-defaultcomponent-background: #ffffff;
+$mat-hover: map-get($mat-emersonbase, e-light);
+$mat-selected: map-get($mat-emersonbase, e-highlight-subtly);
+$mat-ripple: rgba(0,0,0,.20);
+$mat-validationerror: map-get($mat-critical, 600);
+$mat-formfield-background: $mat-defaultcomponent-background;
+$mat-chip-background: $light-primary-background;
+$mat-textsubscript-color: #00000070;
+
+$alertemergency: #7f429a; //not in design system, should it be? 
+$alertsecondary: map-get($mat-unknowngray, 50);
+$alertsuccess: map-get($mat-good, 50);
+$alertinfo: map-get($mat-info, 50);
+$alertwarning: map-get($mat-advise-warning, 50);
+$alertcritical: map-get($mat-critical, 50);
+
+$alertemergencytext: #7f429a; //not in design system, should it be? 
+$alertsecondarytext: map-get($mat-unknowngray, 800);
+$alertsuccesstext: map-get($mat-good, 900);
+$alertinfotext: map-get($mat-info, 900);
+$alertwarningtext: $warmtext;
+$alertcriticaltext: $warmtext;
