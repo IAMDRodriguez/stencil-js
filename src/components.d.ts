@@ -14,10 +14,6 @@ export namespace Components {
         "text": string;
         "variant": BadgeVariant;
     }
-    interface EmersonBanner {
-        "action": boolean;
-        "close": () => Promise<void>;
-=======
     interface EmersonHint {
         "closable": boolean;
         "darkmode": boolean;
@@ -27,22 +23,10 @@ export namespace Components {
         "withimage": boolean;
         "withlink": boolean;
         "withtitle": boolean;
->>>>>>> upstream/main
     }
     interface EmersonIcon {
         "name": string;
         "size": string;
-    }
-    interface MaterialButton {
-        "clicked": () => Promise<void>;
-        "disabled": boolean;
-        "high__emphasis": boolean;
-        "icon": string;
-        "label": string;
-        "low__emphasis": boolean;
-        "medium__emphasis": boolean;
-        "primary": boolean;
-        "secondary": boolean;
     }
     interface MaterialInput {
         "label": string;
@@ -67,10 +51,6 @@ export namespace Components {
         "header": string;
     }
 }
-export interface MaterialButtonCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMaterialButtonElement;
-}
 declare global {
     interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
     }
@@ -78,34 +58,17 @@ declare global {
         prototype: HTMLEmersonBadgeComponentElement;
         new (): HTMLEmersonBadgeComponentElement;
     };
-    interface HTMLEmersonBannerElement extends Components.EmersonBanner, HTMLStencilElement {
+    interface HTMLEmersonHintElement extends Components.EmersonHint, HTMLStencilElement {
     }
-    var HTMLEmersonBannerElement: {
-        prototype: HTMLEmersonBannerElement;
-        new (): HTMLEmersonBannerElement;
+    var HTMLEmersonHintElement: {
+        prototype: HTMLEmersonHintElement;
+        new (): HTMLEmersonHintElement;
     };
     interface HTMLEmersonIconElement extends Components.EmersonIcon, HTMLStencilElement {
     }
     var HTMLEmersonIconElement: {
         prototype: HTMLEmersonIconElement;
         new (): HTMLEmersonIconElement;
-    };
-    interface HTMLMaterialButtonElementEventMap {
-        "buttonClicked": any;
-    }
-    interface HTMLMaterialButtonElement extends Components.MaterialButton, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLMaterialButtonElementEventMap>(type: K, listener: (this: HTMLMaterialButtonElement, ev: MaterialButtonCustomEvent<HTMLMaterialButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLMaterialButtonElementEventMap>(type: K, listener: (this: HTMLMaterialButtonElement, ev: MaterialButtonCustomEvent<HTMLMaterialButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLMaterialButtonElement: {
-        prototype: HTMLMaterialButtonElement;
-        new (): HTMLMaterialButtonElement;
     };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
@@ -127,9 +90,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "emerson-badge-component": HTMLEmersonBadgeComponentElement;
-        "emerson-banner": HTMLEmersonBannerElement;
+        "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
-        "material-button": HTMLMaterialButtonElement;
         "material-input": HTMLMaterialInputElement;
         "my-component": HTMLMyComponentElement;
         "side-drawer": HTMLSideDrawerElement;
@@ -142,23 +104,19 @@ declare namespace LocalJSX {
         "text"?: string;
         "variant"?: BadgeVariant;
     }
-    interface EmersonBanner {
-        "action"?: boolean;
+    interface EmersonHint {
+        "closable"?: boolean;
+        "darkmode"?: boolean;
+        "horizontal"?: boolean;
+        "link"?: string;
+        "vertical"?: boolean;
+        "withimage"?: boolean;
+        "withlink"?: boolean;
+        "withtitle"?: boolean;
     }
     interface EmersonIcon {
         "name"?: string;
         "size"?: string;
-    }
-    interface MaterialButton {
-        "disabled"?: boolean;
-        "high__emphasis"?: boolean;
-        "icon"?: string;
-        "label"?: string;
-        "low__emphasis"?: boolean;
-        "medium__emphasis"?: boolean;
-        "onButtonClicked"?: (event: MaterialButtonCustomEvent<any>) => void;
-        "primary"?: boolean;
-        "secondary"?: boolean;
     }
     interface MaterialInput {
         "label"?: string;
@@ -184,9 +142,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "emerson-badge-component": EmersonBadgeComponent;
-        "emerson-banner": EmersonBanner;
+        "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
-        "material-button": MaterialButton;
         "material-input": MaterialInput;
         "my-component": MyComponent;
         "side-drawer": SideDrawer;
@@ -197,9 +154,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
-            "emerson-banner": LocalJSX.EmersonBanner & JSXBase.HTMLAttributes<HTMLEmersonBannerElement>;
+            "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
-            "material-button": LocalJSX.MaterialButton & JSXBase.HTMLAttributes<HTMLMaterialButtonElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;
