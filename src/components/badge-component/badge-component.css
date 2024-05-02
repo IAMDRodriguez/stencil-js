@@ -1,0 +1,47 @@
+.badge {
+  position: relative;
+  display: inline-block;
+
+  .topRight {
+    top: -8px;
+    right: -8px;
+  }
+
+  .topLeft {
+    top: -8px;
+    left: -8px;
+  }
+
+  .bottomLeft {
+    bottom: -8px;
+    left: -8px;
+  }
+
+  .bottomRight {
+    bottom: -8px;
+    right: -8px;
+  }
+}
+
+.count {
+  position: absolute;
+  color: white;
+  font-family: Noto Sans Medium;
+  font-size: 12px;
+  line-height: 20px;
+  padding-left: 6.5px;
+  padding-right: 6.5px;
+  border-radius: 100%;
+}
+
+.primary {
+  color: #000000;
+  opacity: 87%;
+}
+
+.dot-badge {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}

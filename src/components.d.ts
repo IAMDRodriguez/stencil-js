@@ -5,7 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+export { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
 export namespace Components {
+    interface EmersonBadgeComponent {
+        "color": BadgeColor;
+        "position": BadgePosition;
+        "text": string;
+        "variant": BadgeVariant;
+    }
     interface EmersonHint {
         "closable": boolean;
         "darkmode": boolean;
@@ -24,8 +32,32 @@ export namespace Components {
         "label": string;
         "placeholder": string;
     }
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
+    interface SideDrawer {
+        "description": string;
+        "header": string;
+    }
 }
 declare global {
+    interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
+    }
+    var HTMLEmersonBadgeComponentElement: {
+        prototype: HTMLEmersonBadgeComponentElement;
+        new (): HTMLEmersonBadgeComponentElement;
+    };
     interface HTMLEmersonHintElement extends Components.EmersonHint, HTMLStencilElement {
     }
     var HTMLEmersonHintElement: {
@@ -44,13 +76,34 @@ declare global {
         prototype: HTMLMaterialInputElement;
         new (): HTMLMaterialInputElement;
     };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
+    interface HTMLSideDrawerElement extends Components.SideDrawer, HTMLStencilElement {
+    }
+    var HTMLSideDrawerElement: {
+        prototype: HTMLSideDrawerElement;
+        new (): HTMLSideDrawerElement;
+    };
     interface HTMLElementTagNameMap {
+        "emerson-badge-component": HTMLEmersonBadgeComponentElement;
         "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
         "material-input": HTMLMaterialInputElement;
+        "my-component": HTMLMyComponentElement;
+        "side-drawer": HTMLSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface EmersonBadgeComponent {
+        "color"?: BadgeColor;
+        "position"?: BadgePosition;
+        "text"?: string;
+        "variant"?: BadgeVariant;
+    }
     interface EmersonHint {
         "closable"?: boolean;
         "darkmode"?: boolean;
@@ -69,19 +122,43 @@ declare namespace LocalJSX {
         "label"?: string;
         "placeholder"?: string;
     }
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
+    interface SideDrawer {
+        "description"?: string;
+        "header"?: string;
+    }
     interface IntrinsicElements {
+        "emerson-badge-component": EmersonBadgeComponent;
         "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
         "material-input": MaterialInput;
+        "my-component": MyComponent;
+        "side-drawer": SideDrawer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
             "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;
         }
     }
 }
