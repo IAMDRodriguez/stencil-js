@@ -1,0 +1,37 @@
+@import './../palette';
+
+::ng-deep td.mat-mdc-cell {
+  border-bottom-width: none !important;
+
+  // border-bottom-style: none !important;
+}
+
+::ng-deep th.mat-mdc-header-cell {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  // padding-bottom: 30px !important;
+  text-transform: uppercase;
+}
+
+.mdc-data-table__row:last-child .mat-mdc-cell {
+  // border-bottom-color: red;
+  border-bottom: 1px solid $border-color  !important;
+}
+
+.table-container {
+  height: calc((100vh - 115px) * 0.8);
+  overflow-y: auto;
+}
+
+table {
+  // height: 100%;
+  width: 100%;
+}
+
+tr.mat-mdc-header-row {
+  height: 72px !important;
+}
+
+// th.mat-sort-header-sorted{
+//   color:blue;
+// }

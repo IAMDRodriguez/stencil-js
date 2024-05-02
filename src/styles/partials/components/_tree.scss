@@ -1,0 +1,10 @@
+@import './../palette';
+
+.mat-tree-node:hover {
+  background-color: $mat-hover ;
+  cursor: pointer;
+}
+
+.background-highlight {
+  background-color: $mat-selected ;
+}

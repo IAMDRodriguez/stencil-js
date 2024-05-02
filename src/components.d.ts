@@ -17,6 +17,17 @@ export namespace Components {
     interface EmersonBanner {
         "action": boolean;
         "close": () => Promise<void>;
+=======
+    interface EmersonHint {
+        "closable": boolean;
+        "darkmode": boolean;
+        "horizontal": boolean;
+        "link": string;
+        "vertical": boolean;
+        "withimage": boolean;
+        "withlink": boolean;
+        "withtitle": boolean;
+>>>>>>> upstream/main
     }
     interface EmersonIcon {
         "name": string;

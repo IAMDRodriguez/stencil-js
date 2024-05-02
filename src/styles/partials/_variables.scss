@@ -1,0 +1,48 @@
+
+// NEW VALUES 20240304
+
+// BORDER RADIUS 
+
+$borderradius-none-default: 0px;
+$borderradius-xs-default: 2px;
+$borderradius-s-default: 4px;
+$borderradius-m-default: 8px;
+$borderradius-l-default: 12px;
+$borderradius-xl-default: 24px;
+$borderradius-round-default: 50px;
+
+$borderradius-none-sharp: 0px;
+$borderradius-xs-sharp: 1px;
+$borderradius-s-sharp: 2px;
+$borderradius-m-sharp: 2px;
+$borderradius-l-sharp: 4px;
+$borderradius-xl-sharp: 8px;
+$borderradius-round-sharp: 50px;
+
+// SPACING MARGIN, PADDING  
+
+$spacing-none: 0px;
+$spacing-4xs: 1px;
+$spacing-3xs: 2px;
+$spacing-2xs: 4px;
+$spacing-xs: 6px;
+$spacing-s: 8px;
+$spacing-m: 12px;
+$spacing-l: 18px;
+$spacing-xl: 24px;
+$spacing-2xl: 36px;
+$spacing-3xl: 48px;
+$spacing-4xl: 56px;
+
+
+$smallborderstart: $borderradius-s-default $borderradius-none-default $borderradius-none-default $borderradius-s-default;
+$smallborderend: $borderradius-none-default $borderradius-s-default $borderradius-s-default $borderradius-none-default;
+
+$largebottomborderradius: $borderradius-l-default $borderradius-l-default $borderradius-none-default $borderradius-none-default;
+$largerightsideborderradius: $borderradius-l-default $borderradius-none-default $borderradius-none-default $borderradius-l-default;
+$largeleftsideborderradius: $borderradius-none-default $borderradius-l-default $borderradius-l-default $borderradius-none-default;
+$largetopborderradius: $borderradius-none-default $borderradius-none-default $borderradius-l-default $borderradius-l-default;
+
+$smallbuttonpadding: $spacing-4xs $spacing-2xs;
+$largebuttonpadding: $spacing-xl $spacing-2xl;
+

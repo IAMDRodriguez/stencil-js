@@ -1,0 +1,81 @@
+// @import './../palette';
+
+// variables and pointing to palettes doesn't seem to work here. 
+// hardcoded as of 2024/03/13 until a better approach is found, 
+
+::ng-deep .mat-mdc-snack-bar-container {
+    &.app-notification-info {
+        --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+        --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+        --mdc-snackbar-container-color: #0764A8 !important; //Info/800
+    }
+    &.app-notification-good {
+        --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+        --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+        --mdc-snackbar-container-color: #00A07B !important; //Good/500
+    }
+    &.app-notification-critical {
+        --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+        --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+        --mdc-snackbar-container-color: #E52527 !important; //Critical/600
+    }
+    &.app-notification-warning {
+        --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+        --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+        --mdc-snackbar-container-color: #F79428 !important; //Advice/700
+    }
+    &.app-notification-advise {
+        --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+        --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+        --mdc-snackbar-container-color: #FFC800 !important; //Advice/400
+    }
+    &.app-notification-unknown {
+        --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+        --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+        --mdc-snackbar-container-color: #808080 !important; //Gray/700
+    }
+}
+
+// // $white: $light-primary-text;
+// // $info: map-get($map: $mat-info, $key: 800); 
+// $white: #ffffff;
+// $info: blue;
+// $critical: map-get($map: $mat-critical, $key: 800);
+// $good: map-get($map: $mat-good, $key: 500);
+// $warning: map-get($map: $mat-advise-warning, $key: 700);
+// $advise: map-get($map: $mat-advise-warning, $key: 400);
+// $unknown: map-get($map: $mat-unknowngray, $key: 700);
+
+// ::ng-deep .mat-mdc-snack-bar-container {
+//     &.app-notification-info {
+//         --mat-mdc-snack-bar-button-color: white !important;
+//         --mdc-snackbar-supporting-text-color: white !important;
+//         --mdc-snackbar-container-color: teal !important; 
+//     }
+//     &.app-notification-good {
+//         --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+//         --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+//         --mdc-snackbar-container-color: green !important;
+//     }
+//     &.app-notification-warning {
+//         --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+//         --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+//         --mdc-snackbar-container-color: orange !important;
+//     }
+//     &.app-notification-advise {
+//         --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+//         --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+//         --mdc-snackbar-container-color: yellow !important;
+//     }
+//     &.app-notification-critical {
+//         --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+//         --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+//         --mdc-snackbar-container-color: red !important;
+//     }
+//     &.app-notification-unknown {
+//         --mat-mdc-snack-bar-button-color: #FFFFFF !important;
+//         --mdc-snackbar-supporting-text-color: #FFFFFF !important;
+//         --mdc-snackbar-container-color: #555555 !important;
+//     }
+// }
+

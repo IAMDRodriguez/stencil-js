@@ -1,0 +1,86 @@
+@use '@material/switch/switch' as mdc-switch;
+@use '@material/switch/switch-theme' as mdc-switch-theme;
+@import './../palette';
+
+// ::ng-deep .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__shadow {
+//     background-color: $mat-defaultcomponent-background !important; 
+//   }
+
+
+// ::ng-deep .mat-mdc-slide-toggle.mat-mdc-slide-toggle:not(.mat-disabled) .mdc-switch__shadow {
+//     background-color: $mat-defaultcomponent-background !important;
+// }
+
+::ng-deep .mdc-switch .mdc-switch__track{
+    border-radius: 11px !important;
+    width: 36px !important;
+    height: 22px !important;
+}
+
+::ng-deep .mdc-switch .mdc-switch__handle {
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 2px !important;
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-switch__icon {
+    visibility: hidden !important;
+}
+
+// .mat-mdc-slide-toggle .mdc-form-field .mdc-switch {
+//   --mdc-switch-selected-track-color: #05AFF8;
+//   --mdc-switch-unselected-track-color: #05AFF8;
+// }
+
+$_color-selected-handle: $mat-defaultcomponent-background ;
+$_color-unselected-handle: $mat-defaultcomponent-background;
+
+$_color-unselected-track: map-get($map: $mat-unknowngray, $key: 600);
+$_color-selected-track: map-get($map: $mat-info, $key: 500);
+
+$_color-disabled-selected-track: $_color-unselected-track;
+$_color-disabled-unselected-track: $_color-unselected-track;
+
+.mat-mdc-slide-toggle {
+
+  .mdc-switch {
+
+    @include  mdc-switch-theme.theme((
+//handle color
+      disabled-selected-handle-color: $_color-selected-handle,
+      disabled-unselected-handle-color: $_color-unselected-handle,
+
+      selected-handle-color: $_color-selected-handle,
+      selected-focus-handle-color: $_color-selected-handle,
+      selected-hover-handle-color: $_color-selected-handle,
+      selected-pressed-handle-color: $_color-selected-handle,
+
+      unselected-handle-color: $_color-unselected-handle,
+      unselected-focus-handle-color: $_color-unselected-handle,
+      unselected-hover-handle-color: $_color-unselected-handle,
+      unselected-pressed-handle-color: $_color-unselected-handle,
+
+//tracks color
+      disabled-selected-track-color: $_color-unselected-track,
+      disabled-unselected-track-color: $_color-unselected-track,
+
+      selected-track-color: $_color-selected-track,
+      selected-focus-track-color: $_color-selected-track,
+      selected-hover-track-color: $_color-selected-track,
+      selected-pressed-track-color: $_color-selected-track,
+
+      unselected-track-color: $_color-unselected-track,
+      unselected-focus-track-color: $_color-unselected-track,
+      unselected-hover-track-color: $_color-unselected-track,
+      unselected-pressed-track-color: $_color-unselected-track,
+// icon colors
+
+    //   disabled-selected-icon-color:  $_color-selected-handle,
+    //   disabled-unselected-icon-color: $_color-unselected-handle,
+    //   selected-icon-color: $_color-selected-handle,
+    //   unselected-icon-color: $_color-unselected-handle,
+
+    ));
+
+  }
+}

@@ -1,0 +1,23 @@
+@import './../palette';
+// guardian2-subscriptions-table {
+//     display: flex;
+//     margin-top: 10px;
+//     height: calc(100% - 164px);
+//     width: 100%;
+//     overflow: auto;
+//     align-items: flex-start;
+//   }
+
+guardian2-subscriptions-table {
+  display: flex;
+  margin-top: 10px;
+  height: calc(100% - 164px);
+  width: 100%;
+  overflow: auto;
+  align-items: flex-start;
+}
+
+guardian2-subscriptions-table.empty-data {
+  height: calc(100% - 200px);
+  overflow: hidden;
+}
