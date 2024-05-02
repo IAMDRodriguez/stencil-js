@@ -127,13 +127,23 @@
 
 .pro__hint__closable {
     display: flex;
+    gap: 8px;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
 
+.pro__tip__title {
+    width: 100%;
+}
+
 .display__none {
     display: none;
+}
+
+
+.fixed__height {
+    height: 18px;
 }
 
 .pro__hint__without__title {

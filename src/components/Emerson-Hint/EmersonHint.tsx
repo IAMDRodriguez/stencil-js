@@ -73,8 +73,6 @@ export class EmersonHint {
                     'hint__darkmode': this._isDarkMode,
                 }}>
                     <div class={{
-                        'hint__vertical': this._isVertical,
-                        'hint__horizontal': this._isHorizontal,
                         'hint__with__title': this.withtitle,
                         'hint__with__image': this.withimage,
                         'hint__closable': this.closable
@@ -90,9 +88,8 @@ export class EmersonHint {
                             <div class={{
                                 'pro__hint__closable': this.closable && this._isVertical && this.withtitle,
                                 'pro__hint__without__title': this.closable && this._isVertical && !this.withtitle,
-                                'display__none': !this.withtitle && !this.withimage,
                             }}>
-                                { this.withtitle && 'Pro tip:' }
+                                { this.withtitle && <span class="pro__tip__title">Pro tip:</span> }
                                 { this.closable && this._isVertical && <div class="hint__closable">
                                         <div class="close" onClick={() => this._handleClose()}>
                                             <img src="../../assets/icons/close.svg"></img>
@@ -112,7 +109,10 @@ export class EmersonHint {
                             >
                                 <slot></slot>
                             </div>
-                            <div class="closable__link__container">
+                            <div class={{
+                                "display__none": !this.withlink && !this.closable && !this._isHorizontal,
+                                "closable__link__container": this._isHorizontal && (this.withlink || this.closable),
+                            }}>
                             {this.withlink && this._isHorizontal && <div class="hint__with__link last__here"><a href={'http://' + this.link}>HERE</a></div>}
                             {this.closable && this._isHorizontal && <div class="hint__closable last__closable">
                                 <div class="close" onClick={() => this._handleClose()}>
