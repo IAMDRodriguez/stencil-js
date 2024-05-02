@@ -83,7 +83,7 @@ export class EmersonHint {
                             'hint__vertical': this._isVertical,
                             'hint__horizontal': this._isHorizontal,
                         }}>
-                            {this.withimage && this._isHorizontal && <img src="../../assets/icons/hint.svg"></img>}
+                            {this.withimage && this._isHorizontal && <img src="../../assets/images/hint.png" class="hint__img"></img>}
 
                             <div class={{
                                 'pro__hint__closable': this.closable && this._isVertical && this.withtitle,
@@ -99,7 +99,7 @@ export class EmersonHint {
                             </div>
                             {this.withimage && this._isVertical && 
                             <div class="center">
-                                <img src="../../assets/icons/hint.svg"></img>
+                                <img src="../../assets/images/hint.png" class="hint__img"></img>
                             </div>
                             }
                             <div class={{

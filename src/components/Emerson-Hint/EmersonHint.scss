@@ -117,7 +117,7 @@
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    padding-right: 10px;
 
     a {
         text-decoration: none;
@@ -144,6 +144,11 @@
 
 .fixed__height {
     height: 18px;
+}
+
+.hint__img {
+    width: 40px;
+    height: 40px;
 }
 
 .pro__hint__without__title {
