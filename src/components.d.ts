@@ -6,13 +6,39 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+import { SizeButton, SizeIconButton, TypeActionButton, TypeButton, TypeIconButton, TypeIconHLButton, TypeStepPrevNextButton } from "./components/buttons/utils.button";
 export { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+export { SizeButton, SizeIconButton, TypeActionButton, TypeButton, TypeIconButton, TypeIconHLButton, TypeStepPrevNextButton } from "./components/buttons/utils.button";
 export namespace Components {
     interface EmersonBadgeComponent {
         "color": BadgeColor;
         "position": BadgePosition;
         "text": string;
         "variant": BadgeVariant;
+    }
+    interface EmersonBtnIcon {
+        "name": string;
+        "size": string;
+    }
+    interface EmersonButton {
+        "btnClick": () => Promise<void>;
+        "disabled": boolean;
+        "icon_name": string;
+        "is_full": boolean;
+        "is_icon": boolean;
+        "label": string;
+        "size": SizeButton;
+        "type": TypeButton;
+    }
+    interface EmersonFloatingActionButton {
+        "btnClick": () => Promise<void>;
+        "disabled": boolean;
+        "icon_name": string;
+        "label": string;
+        "show_text": boolean;
+        "size": SizeButton;
+        "type": TypeActionButton;
+        "with_icon": boolean;
     }
     interface EmersonHint {
         "closable": boolean;
@@ -27,6 +53,28 @@ export namespace Components {
     interface EmersonIcon {
         "name": string;
         "size": string;
+    }
+    interface EmersonIconButton {
+        "btnClick": () => Promise<void>;
+        "disabled": boolean;
+        "icon_name": string;
+        "size": SizeIconButton;
+        "type": TypeIconButton;
+    }
+    interface EmersonIconHlButton {
+        "btnClick": () => Promise<void>;
+        "disabled": boolean;
+        "icon_name": string;
+        "type": TypeIconHLButton;
+    }
+    interface EmersonSplitButton {
+        "icon_name": string;
+        "is_icon": boolean;
+        "label": string;
+        "options": string[];
+    }
+    interface EmersonStepPrevNextButton {
+        "type": TypeStepPrevNextButton;
     }
     interface MaterialInput {
         "label": string;
@@ -51,12 +99,68 @@ export namespace Components {
         "header": string;
     }
 }
+export interface EmersonButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLEmersonButtonElement;
+}
+export interface EmersonFloatingActionButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLEmersonFloatingActionButtonElement;
+}
+export interface EmersonIconButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLEmersonIconButtonElement;
+}
+export interface EmersonIconHlButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLEmersonIconHlButtonElement;
+}
 declare global {
     interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
     }
     var HTMLEmersonBadgeComponentElement: {
         prototype: HTMLEmersonBadgeComponentElement;
         new (): HTMLEmersonBadgeComponentElement;
+    };
+    interface HTMLEmersonBtnIconElement extends Components.EmersonBtnIcon, HTMLStencilElement {
+    }
+    var HTMLEmersonBtnIconElement: {
+        prototype: HTMLEmersonBtnIconElement;
+        new (): HTMLEmersonBtnIconElement;
+    };
+    interface HTMLEmersonButtonElementEventMap {
+        "buttonClicked": any;
+    }
+    interface HTMLEmersonButtonElement extends Components.EmersonButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLEmersonButtonElementEventMap>(type: K, listener: (this: HTMLEmersonButtonElement, ev: EmersonButtonCustomEvent<HTMLEmersonButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLEmersonButtonElementEventMap>(type: K, listener: (this: HTMLEmersonButtonElement, ev: EmersonButtonCustomEvent<HTMLEmersonButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLEmersonButtonElement: {
+        prototype: HTMLEmersonButtonElement;
+        new (): HTMLEmersonButtonElement;
+    };
+    interface HTMLEmersonFloatingActionButtonElementEventMap {
+        "buttonClicked": any;
+    }
+    interface HTMLEmersonFloatingActionButtonElement extends Components.EmersonFloatingActionButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLEmersonFloatingActionButtonElementEventMap>(type: K, listener: (this: HTMLEmersonFloatingActionButtonElement, ev: EmersonFloatingActionButtonCustomEvent<HTMLEmersonFloatingActionButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLEmersonFloatingActionButtonElementEventMap>(type: K, listener: (this: HTMLEmersonFloatingActionButtonElement, ev: EmersonFloatingActionButtonCustomEvent<HTMLEmersonFloatingActionButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLEmersonFloatingActionButtonElement: {
+        prototype: HTMLEmersonFloatingActionButtonElement;
+        new (): HTMLEmersonFloatingActionButtonElement;
     };
     interface HTMLEmersonHintElement extends Components.EmersonHint, HTMLStencilElement {
     }
@@ -69,6 +173,52 @@ declare global {
     var HTMLEmersonIconElement: {
         prototype: HTMLEmersonIconElement;
         new (): HTMLEmersonIconElement;
+    };
+    interface HTMLEmersonIconButtonElementEventMap {
+        "buttonClicked": any;
+    }
+    interface HTMLEmersonIconButtonElement extends Components.EmersonIconButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLEmersonIconButtonElementEventMap>(type: K, listener: (this: HTMLEmersonIconButtonElement, ev: EmersonIconButtonCustomEvent<HTMLEmersonIconButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLEmersonIconButtonElementEventMap>(type: K, listener: (this: HTMLEmersonIconButtonElement, ev: EmersonIconButtonCustomEvent<HTMLEmersonIconButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLEmersonIconButtonElement: {
+        prototype: HTMLEmersonIconButtonElement;
+        new (): HTMLEmersonIconButtonElement;
+    };
+    interface HTMLEmersonIconHlButtonElementEventMap {
+        "buttonClicked": any;
+    }
+    interface HTMLEmersonIconHlButtonElement extends Components.EmersonIconHlButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLEmersonIconHlButtonElementEventMap>(type: K, listener: (this: HTMLEmersonIconHlButtonElement, ev: EmersonIconHlButtonCustomEvent<HTMLEmersonIconHlButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLEmersonIconHlButtonElementEventMap>(type: K, listener: (this: HTMLEmersonIconHlButtonElement, ev: EmersonIconHlButtonCustomEvent<HTMLEmersonIconHlButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLEmersonIconHlButtonElement: {
+        prototype: HTMLEmersonIconHlButtonElement;
+        new (): HTMLEmersonIconHlButtonElement;
+    };
+    interface HTMLEmersonSplitButtonElement extends Components.EmersonSplitButton, HTMLStencilElement {
+    }
+    var HTMLEmersonSplitButtonElement: {
+        prototype: HTMLEmersonSplitButtonElement;
+        new (): HTMLEmersonSplitButtonElement;
+    };
+    interface HTMLEmersonStepPrevNextButtonElement extends Components.EmersonStepPrevNextButton, HTMLStencilElement {
+    }
+    var HTMLEmersonStepPrevNextButtonElement: {
+        prototype: HTMLEmersonStepPrevNextButtonElement;
+        new (): HTMLEmersonStepPrevNextButtonElement;
     };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
@@ -90,8 +240,15 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "emerson-badge-component": HTMLEmersonBadgeComponentElement;
+        "emerson-btn-icon": HTMLEmersonBtnIconElement;
+        "emerson-button": HTMLEmersonButtonElement;
+        "emerson-floating-action-button": HTMLEmersonFloatingActionButtonElement;
         "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
+        "emerson-icon-button": HTMLEmersonIconButtonElement;
+        "emerson-icon-hl-button": HTMLEmersonIconHlButtonElement;
+        "emerson-split-button": HTMLEmersonSplitButtonElement;
+        "emerson-step-prev-next-button": HTMLEmersonStepPrevNextButtonElement;
         "material-input": HTMLMaterialInputElement;
         "my-component": HTMLMyComponentElement;
         "side-drawer": HTMLSideDrawerElement;
@@ -103,6 +260,30 @@ declare namespace LocalJSX {
         "position"?: BadgePosition;
         "text"?: string;
         "variant"?: BadgeVariant;
+    }
+    interface EmersonBtnIcon {
+        "name"?: string;
+        "size"?: string;
+    }
+    interface EmersonButton {
+        "disabled"?: boolean;
+        "icon_name"?: string;
+        "is_full"?: boolean;
+        "is_icon"?: boolean;
+        "label"?: string;
+        "onButtonClicked"?: (event: EmersonButtonCustomEvent<any>) => void;
+        "size"?: SizeButton;
+        "type"?: TypeButton;
+    }
+    interface EmersonFloatingActionButton {
+        "disabled"?: boolean;
+        "icon_name"?: string;
+        "label"?: string;
+        "onButtonClicked"?: (event: EmersonFloatingActionButtonCustomEvent<any>) => void;
+        "show_text"?: boolean;
+        "size"?: SizeButton;
+        "type"?: TypeActionButton;
+        "with_icon"?: boolean;
     }
     interface EmersonHint {
         "closable"?: boolean;
@@ -117,6 +298,28 @@ declare namespace LocalJSX {
     interface EmersonIcon {
         "name"?: string;
         "size"?: string;
+    }
+    interface EmersonIconButton {
+        "disabled"?: boolean;
+        "icon_name"?: string;
+        "onButtonClicked"?: (event: EmersonIconButtonCustomEvent<any>) => void;
+        "size"?: SizeIconButton;
+        "type"?: TypeIconButton;
+    }
+    interface EmersonIconHlButton {
+        "disabled"?: boolean;
+        "icon_name"?: string;
+        "onButtonClicked"?: (event: EmersonIconHlButtonCustomEvent<any>) => void;
+        "type"?: TypeIconHLButton;
+    }
+    interface EmersonSplitButton {
+        "icon_name"?: string;
+        "is_icon"?: boolean;
+        "label"?: string;
+        "options"?: string[];
+    }
+    interface EmersonStepPrevNextButton {
+        "type"?: TypeStepPrevNextButton;
     }
     interface MaterialInput {
         "label"?: string;
@@ -142,8 +345,15 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "emerson-badge-component": EmersonBadgeComponent;
+        "emerson-btn-icon": EmersonBtnIcon;
+        "emerson-button": EmersonButton;
+        "emerson-floating-action-button": EmersonFloatingActionButton;
         "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
+        "emerson-icon-button": EmersonIconButton;
+        "emerson-icon-hl-button": EmersonIconHlButton;
+        "emerson-split-button": EmersonSplitButton;
+        "emerson-step-prev-next-button": EmersonStepPrevNextButton;
         "material-input": MaterialInput;
         "my-component": MyComponent;
         "side-drawer": SideDrawer;
@@ -154,8 +364,15 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
+            "emerson-btn-icon": LocalJSX.EmersonBtnIcon & JSXBase.HTMLAttributes<HTMLEmersonBtnIconElement>;
+            "emerson-button": LocalJSX.EmersonButton & JSXBase.HTMLAttributes<HTMLEmersonButtonElement>;
+            "emerson-floating-action-button": LocalJSX.EmersonFloatingActionButton & JSXBase.HTMLAttributes<HTMLEmersonFloatingActionButtonElement>;
             "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
+            "emerson-icon-button": LocalJSX.EmersonIconButton & JSXBase.HTMLAttributes<HTMLEmersonIconButtonElement>;
+            "emerson-icon-hl-button": LocalJSX.EmersonIconHlButton & JSXBase.HTMLAttributes<HTMLEmersonIconHlButtonElement>;
+            "emerson-split-button": LocalJSX.EmersonSplitButton & JSXBase.HTMLAttributes<HTMLEmersonSplitButtonElement>;
+            "emerson-step-prev-next-button": LocalJSX.EmersonStepPrevNextButton & JSXBase.HTMLAttributes<HTMLEmersonStepPrevNextButtonElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;

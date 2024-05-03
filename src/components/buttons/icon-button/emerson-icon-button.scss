@@ -1,0 +1,51 @@
+@use 'emerson-icon-button.theme';
+
+@mixin type($name:''){
+  &-#{$name} {
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50px;
+    font-style: normal;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    line-height: normal;
+    background-color: var(--btn-#{$name}-background);
+    color: var(--btn-#{$name}-color);
+    border-color: transparent;
+    &:hover{
+      background-color: var(--btn-#{$name}-background--hover);
+      color: var(--btn-#{$name}-color--hover);
+    }
+    &:active{
+      background-color: var(--btn-#{$name}-background--active);
+      color: var(--btn-#{$name}-color--active);
+    }
+    &:focus{
+      background-color: var(--btn-#{$name}-background--focus);
+      color: var(--btn-#{$name}-color--focus);
+    }
+    &:disabled, [disabled] {
+      cursor: not-allowed;
+      background-color: var(--btn-#{$name}-background--disabled);
+      color: var(--btn-#{$name}-color--disabled);
+    }
+  }
+}
+
+
+.btn {
+  @include type(primary);
+  @include type(secondary);
+
+  &-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+  }
+}
+
+emerson-icon {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,64 @@
+@use 'sass:map';
+$e-primary: #007EC5;
+$e-white: #FFF;
+$e-disabled: #C0C0C0;
+$e-hover: #0E98E5;
+$e-pressed: #9CDEFF;
+$e-focus: #05AFF8;
+
+$primary-vars: (
+  'background': #{$e-primary},
+  'background--hover': #{$e-hover},
+  'background--active': #{$e-pressed},
+  'background--focus': #{$e-focus},
+  'background--disabled': #{$e-disabled},
+  'color': #{$e-white},
+  'color--hover': #{$e-white},
+  'color--active': #{$e-white},
+  'color--focus': #{$e-white},
+  'color--disabled': #{$e-white},
+);
+
+$secondary-vars: (
+  'background': transparent,
+  'background--hover': transparent,
+  'background--active': transparent,
+  'background--focus': transparent,
+  'background--disabled': transparent,
+  'color': #{$e-primary},
+  'color--hover': #{$e-hover},
+  'color--active': #{$e-pressed},
+  'color--focus': #{$e-focus},
+  'color--disabled': #{$e-disabled},
+);
+
+@mixin variantVars($name:'', $variantColor) {
+  $background: map.get($variantColor, 'background');
+  $backgroundHover: map.get($variantColor, 'background--hover');
+  $backgroundActive: map.get($variantColor, 'background--active');
+  $backgroundFocus: map.get($variantColor, 'background--focus');
+  $backgroundDisabled: map.get($variantColor, 'background--disabled');
+
+  $color: map.get($variantColor, 'color');
+  $colorHover: map.get($variantColor, 'color--hover');
+  $colorActive: map.get($variantColor, 'color--active');
+  $colorFocus: map.get($variantColor, 'color--focus');
+  $colorDisabled: map.get($variantColor, 'color--disabled');
+
+  --btn-#{$name}-background: #{$background};
+  --btn-#{$name}-background--hover: #{$backgroundHover};
+  --btn-#{$name}-background--active: #{$backgroundActive};
+  --btn-#{$name}-background--focus: #{$backgroundFocus};
+  --btn-#{$name}-background--disabled: #{$backgroundDisabled};
+
+  --btn-#{$name}-color: #{$color};
+  --btn-#{$name}-color--hover: #{$color};
+  --btn-#{$name}-color--active: #{$colorActive};
+  --btn-#{$name}-color--focus: #{$colorFocus};
+  --btn-#{$name}-color--disabled: #{$colorDisabled};
+}
+
+:host {
+  @include variantVars(primary, $primary-vars);
+  @include variantVars(secondary, $secondary-vars);
+}
