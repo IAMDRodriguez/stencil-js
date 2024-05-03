@@ -1,0 +1,112 @@
+@use 'sass:map';
+$e-primary: #007EC5;
+$e-white: #FFF;
+$e-disabled: #C0C0C0;
+$e-hover: #0E98E5;
+$e-pressed: #9CDEFF;
+$e-focus: #05AFF8;
+
+$filled-vars: (
+  'background': #{$e-primary},
+  'background--hover': #{$e-hover},
+  'background--active': #{$e-pressed},
+  'background--focus': #{$e-focus},
+  'background--disabled': #{$e-disabled},
+  'color': #{$e-white},
+  'color--hover': #{$e-white},
+  'color--active': #{$e-white},
+  'color--focus': #{$e-white},
+  'color--disabled': #{$e-white},
+  'border-color': transparent,
+  'border-color--hover': transparent,
+  'border-color--active': transparent,
+  'border-color--focus': transparent,
+  'border-color--disabled': transparent,
+  'border-weight': 0,
+);
+
+$outlined-vars: (
+  'background': transparent,
+  'background--hover': transparent,
+  'background--active': transparent,
+  'background--focus': transparent,
+  'background--disabled': transparent,
+  'color': #{$e-primary},
+  'color--hover': #{$e-hover},
+  'color--active': #{$e-pressed},
+  'color--focus': #{$e-focus},
+  'color--disabled': #{$e-disabled},
+  'border-color': #{$e-primary},
+  'border-color--hover': #{$e-hover},
+  'border-color--active': #{$e-pressed},
+  'border-color--focus': #{$e-focus},
+  'border-color--disabled': #{$e-disabled},
+  'border-weight': 2px
+);
+
+$naked-vars: (
+  'background': transparent,
+  'background--hover': transparent,
+  'background--active': transparent,
+  'background--focus': transparent,
+  'background--disabled': transparent,
+  'color': #{$e-primary},
+  'color--hover': #{$e-hover},
+  'color--active': #{$e-pressed},
+  'color--focus': #{$e-focus},
+  'color--disabled': #{$e-disabled},
+  'border-color': transparent,
+  'border-color--hover': transparent,
+  'border-color--active': transparent,
+  'border-color--focus': transparent,
+  'border-color--disabled': transparent,
+  'border-weight': 0
+);
+
+@mixin variantVars($name:'', $variantColor) {
+  $background: map.get($variantColor, 'background');
+  $backgroundHover: map.get($variantColor, 'background--hover');
+  $backgroundActive: map.get($variantColor, 'background--active');
+  $backgroundFocus: map.get($variantColor, 'background--focus');
+  $backgroundDisabled: map.get($variantColor, 'background--disabled');
+
+  $color: map.get($variantColor, 'color');
+  $colorHover: map.get($variantColor, 'color--hover');
+  $colorActive: map.get($variantColor, 'color--active');
+  $colorFocus: map.get($variantColor, 'color--focus');
+  $colorDisabled: map.get($variantColor, 'color--disabled');
+
+  $borderColor: map.get($variantColor, 'border-color');
+  $borderColorHover: map.get($variantColor, 'border-color--hover');
+  $borderColorActive: map.get($variantColor, 'border-color--active');
+  $borderColorFocus: map.get($variantColor, 'border-color--focus');
+  $borderColorDisabled: map.get($variantColor, 'border-color--disabled');
+
+  $borderWeight: map.get($variantColor, 'border-weight');
+
+  --btn-#{$name}-background: #{$background};
+  --btn-#{$name}-background--hover: #{$backgroundHover};
+  --btn-#{$name}-background--active: #{$backgroundActive};
+  --btn-#{$name}-background--focus: #{$backgroundFocus};
+  --btn-#{$name}-background--disabled: #{$backgroundDisabled};
+
+  --btn-#{$name}-color: #{$color};
+  --btn-#{$name}-color--hover: #{$color};
+  --btn-#{$name}-color--active: #{$colorActive};
+  --btn-#{$name}-color--focus: #{$colorFocus};
+  --btn-#{$name}-color--disabled: #{$colorDisabled};
+
+  --btn-#{$name}-border-color: #{$borderColor};
+  --btn-#{$name}-border-color--hover: #{$borderColorHover};
+  --btn-#{$name}-border-color--active: #{$borderColorActive};
+  --btn-#{$name}-border-color--focus: #{$borderColorFocus};
+  --btn-#{$name}-border-color--disabled: #{$borderColorDisabled};
+
+  --btn-#{$name}-border-weight: #{$borderWeight};
+}
+
+:host {
+  @include variantVars(filled, $filled-vars);
+  @include variantVars(outlined, $outlined-vars);
+  @include variantVars(naked, $naked-vars);
+}

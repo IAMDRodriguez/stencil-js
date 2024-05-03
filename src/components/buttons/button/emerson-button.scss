@@ -1,0 +1,82 @@
+@use 'emerson-button.theme';
+
+@mixin type($name:''){
+  &-#{$name} {
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-style: normal;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    line-height: normal;
+    background-color: var(--btn-#{$name}-background);
+    color: var(--btn-#{$name}-color);
+    border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color);
+    &:hover{
+      background-color: var(--btn-#{$name}-background--hover);
+      color: var(--btn-#{$name}-color--hover);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--hover);
+    }
+    &:active{
+      background-color: var(--btn-#{$name}-background--active);
+      color: var(--btn-#{$name}-color--active);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--active);
+    }
+    &:focus{
+      background-color: var(--btn-#{$name}-background--focus);
+      color: var(--btn-#{$name}-color--focus);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--focus);
+    }
+    &:disabled, [disabled] {
+      cursor: not-allowed;
+      background-color: var(--btn-#{$name}-background--disabled);
+      color: var(--btn-#{$name}-color--disabled);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--disabled);
+    }
+  }
+}
+
+@mixin size() {
+  &-medium{
+    height: 39px;
+    font-size: 16px;
+  }
+
+  &-small {
+    height: 26px;
+    font-size: 12px;
+  }
+
+  &-large {
+    height: 56px;
+    font-size: 18px;
+  }
+}
+
+.btn {
+  @include size();
+  @include type(primary);
+  @include type(outlined);
+  @include type(naked);
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-full {
+    width: 100%;
+  }
+
+  &-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 18px;
+  }
+}
+
+emerson-icon {
+  display: flex;
+  align-items: center;
+}

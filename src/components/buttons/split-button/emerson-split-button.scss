@@ -1,0 +1,94 @@
+$e-primary: #007EC5;
+$e-white: #FFF;
+$e-disabled: #C0C0C0;
+$e-hover: #0E98E5;
+$e-pressed: #9CDEFF;
+$e-focus: #05AFF8;
+$e-border: #EFEFEF;
+.content{
+  display: flex;
+}
+
+.btn {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 18px;
+  }
+
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600;
+  line-height: normal;
+  background-color: $e-primary;
+  color: $e-white;
+  border-right: 1px solid $e-border;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+.select-container {
+  position: relative;
+  display: block;
+
+  .custom-select-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 12px;
+    font-style: normal;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    line-height: normal;
+    background-color: $e-primary;
+    color: $e-white;
+    gap: 10px;
+    padding: 8px 18px;
+
+    &--active {
+      background-color: $e-pressed;
+    }
+  }
+}
+
+.dropdown {
+  border-radius: 8px;
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  right: 0;
+  width: 100%;
+  -moz-border-radius-topright: 4px;
+  z-index: 1;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.1);
+  .option {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    line-height: 140%;
+    text-transform: capitalize;
+    &:hover{
+      background-color: $e-disabled;
+    }
+  }
+}
+
+emerson-icon {
+  display: flex;
+  align-items: center;
+}

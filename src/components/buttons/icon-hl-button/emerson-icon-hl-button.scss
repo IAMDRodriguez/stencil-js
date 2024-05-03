@@ -1,0 +1,51 @@
+@use 'emerson-icon-hl-button.theme';
+
+@mixin type($name:''){
+  &-#{$name} {
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: var(--btn-#{$name}-background);
+    color: var(--btn-#{$name}-color);
+    border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color);
+    &:hover{
+      background-color: var(--btn-#{$name}-background--hover);
+      color: var(--btn-#{$name}-color--hover);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--hover);
+    }
+    &:active{
+      background-color: var(--btn-#{$name}-background--active);
+      color: var(--btn-#{$name}-color--active);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--active);
+    }
+    &:focus{
+      background-color: var(--btn-#{$name}-background--focus);
+      color: var(--btn-#{$name}-color--focus);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--focus);
+    }
+    &:disabled, [disabled] {
+      cursor: not-allowed;
+      background-color: var(--btn-#{$name}-background--disabled);
+      color: var(--btn-#{$name}-color--disabled);
+      border: var(--btn-#{$name}-border-weight) solid var(--btn-#{$name}-border-color--disabled);
+    }
+  }
+}
+
+.btn {
+  @include type(default);
+  @include type(outlined);
+  @include type(naked);
+
+  &-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+}
+
+emerson-icon {
+  display: flex;
+  align-items: center;
+}
