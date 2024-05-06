@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+import { SekeletonType } from "./components/emerson-skeleton/emerson-skeleton.data";
 export { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+export { SekeletonType } from "./components/emerson-skeleton/emerson-skeleton.data";
 export namespace Components {
     interface EmersonBadgeComponent {
         "color": BadgeColor;
@@ -27,6 +29,12 @@ export namespace Components {
     interface EmersonIcon {
         "name": string;
         "size": string;
+    }
+    interface EmersonSkeleton {
+        "animation": boolean;
+        "height": string;
+        "variant": SekeletonType;
+        "width": string;
     }
     interface MaterialInput {
         "label": string;
@@ -70,6 +78,12 @@ declare global {
         prototype: HTMLEmersonIconElement;
         new (): HTMLEmersonIconElement;
     };
+    interface HTMLEmersonSkeletonElement extends Components.EmersonSkeleton, HTMLStencilElement {
+    }
+    var HTMLEmersonSkeletonElement: {
+        prototype: HTMLEmersonSkeletonElement;
+        new (): HTMLEmersonSkeletonElement;
+    };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
     var HTMLMaterialInputElement: {
@@ -92,6 +106,7 @@ declare global {
         "emerson-badge-component": HTMLEmersonBadgeComponentElement;
         "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
+        "emerson-skeleton": HTMLEmersonSkeletonElement;
         "material-input": HTMLMaterialInputElement;
         "my-component": HTMLMyComponentElement;
         "side-drawer": HTMLSideDrawerElement;
@@ -117,6 +132,12 @@ declare namespace LocalJSX {
     interface EmersonIcon {
         "name"?: string;
         "size"?: string;
+    }
+    interface EmersonSkeleton {
+        "animation"?: boolean;
+        "height"?: string;
+        "variant"?: SekeletonType;
+        "width"?: string;
     }
     interface MaterialInput {
         "label"?: string;
@@ -144,6 +165,7 @@ declare namespace LocalJSX {
         "emerson-badge-component": EmersonBadgeComponent;
         "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
+        "emerson-skeleton": EmersonSkeleton;
         "material-input": MaterialInput;
         "my-component": MyComponent;
         "side-drawer": SideDrawer;
@@ -156,6 +178,7 @@ declare module "@stencil/core" {
             "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
             "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
+            "emerson-skeleton": LocalJSX.EmersonSkeleton & JSXBase.HTMLAttributes<HTMLEmersonSkeletonElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;
