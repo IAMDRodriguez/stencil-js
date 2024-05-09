@@ -28,7 +28,7 @@ describe('emerson-badge-component', () => {
       <emerson-badge-component text=" " color="warning" variant="dot" position="bottomLeft">
         <mock:shadow-root>
           <div class="badge">
-            <span class="dot-badge bottomLeft" style="background-color: #F79429;"></span>
+            <span class="dot-badge bottomLeft" style="background-color: #F79428;"></span>
             <slot></slot>
           </div>
         </mock:shadow-root>

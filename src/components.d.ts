@@ -5,9 +5,19 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AvatarSize } from "./components/emerson-avatar/emerson-avatar.data";
 import { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+import { SekeletonType } from "./components/emerson-skeleton/emerson-skeleton.data";
+export { AvatarSize } from "./components/emerson-avatar/emerson-avatar.data";
 export { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
+export { SekeletonType } from "./components/emerson-skeleton/emerson-skeleton.data";
 export namespace Components {
+    interface EmersonAvatar {
+        "active": boolean;
+        "alt": string;
+        "size": AvatarSize;
+        "src": string;
+    }
     interface EmersonBadgeComponent {
         "color": BadgeColor;
         "position": BadgePosition;
@@ -27,6 +37,12 @@ export namespace Components {
     interface EmersonIcon {
         "name": string;
         "size": string;
+    }
+    interface EmersonSkeleton {
+        "animation": boolean;
+        "height": string;
+        "variant": SekeletonType;
+        "width": string;
     }
     interface MaterialInput {
         "label": string;
@@ -52,6 +68,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLEmersonAvatarElement extends Components.EmersonAvatar, HTMLStencilElement {
+    }
+    var HTMLEmersonAvatarElement: {
+        prototype: HTMLEmersonAvatarElement;
+        new (): HTMLEmersonAvatarElement;
+    };
     interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
     }
     var HTMLEmersonBadgeComponentElement: {
@@ -69,6 +91,12 @@ declare global {
     var HTMLEmersonIconElement: {
         prototype: HTMLEmersonIconElement;
         new (): HTMLEmersonIconElement;
+    };
+    interface HTMLEmersonSkeletonElement extends Components.EmersonSkeleton, HTMLStencilElement {
+    }
+    var HTMLEmersonSkeletonElement: {
+        prototype: HTMLEmersonSkeletonElement;
+        new (): HTMLEmersonSkeletonElement;
     };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
@@ -89,15 +117,23 @@ declare global {
         new (): HTMLSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
+        "emerson-avatar": HTMLEmersonAvatarElement;
         "emerson-badge-component": HTMLEmersonBadgeComponentElement;
         "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
+        "emerson-skeleton": HTMLEmersonSkeletonElement;
         "material-input": HTMLMaterialInputElement;
         "my-component": HTMLMyComponentElement;
         "side-drawer": HTMLSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface EmersonAvatar {
+        "active"?: boolean;
+        "alt"?: string;
+        "size"?: AvatarSize;
+        "src"?: string;
+    }
     interface EmersonBadgeComponent {
         "color"?: BadgeColor;
         "position"?: BadgePosition;
@@ -117,6 +153,12 @@ declare namespace LocalJSX {
     interface EmersonIcon {
         "name"?: string;
         "size"?: string;
+    }
+    interface EmersonSkeleton {
+        "animation"?: boolean;
+        "height"?: string;
+        "variant"?: SekeletonType;
+        "width"?: string;
     }
     interface MaterialInput {
         "label"?: string;
@@ -141,9 +183,11 @@ declare namespace LocalJSX {
         "header"?: string;
     }
     interface IntrinsicElements {
+        "emerson-avatar": EmersonAvatar;
         "emerson-badge-component": EmersonBadgeComponent;
         "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
+        "emerson-skeleton": EmersonSkeleton;
         "material-input": MaterialInput;
         "my-component": MyComponent;
         "side-drawer": SideDrawer;
@@ -153,9 +197,11 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emerson-avatar": LocalJSX.EmersonAvatar & JSXBase.HTMLAttributes<HTMLEmersonAvatarElement>;
             "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
             "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
+            "emerson-skeleton": LocalJSX.EmersonSkeleton & JSXBase.HTMLAttributes<HTMLEmersonSkeletonElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;

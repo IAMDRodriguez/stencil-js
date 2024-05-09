@@ -6,7 +6,7 @@ export enum BadgeVariant {
 export enum BadgeColor {
   critical = "#D31723",
   good = "#00805A",
-  warning = "#F79429",
+  warning = "#F79428",
   primary = "none",
   advice = "#FFC800",
   unknown = "#A0A0A0",
