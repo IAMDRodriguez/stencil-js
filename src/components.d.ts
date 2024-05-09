@@ -5,11 +5,19 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AvatarSize } from "./components/emerson-avatar/emerson-avatar.data";
 import { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
 import { SekeletonType } from "./components/emerson-skeleton/emerson-skeleton.data";
+export { AvatarSize } from "./components/emerson-avatar/emerson-avatar.data";
 export { BadgeColor, BadgePosition, BadgeVariant } from "./components/badge-component/badge.data";
 export { SekeletonType } from "./components/emerson-skeleton/emerson-skeleton.data";
 export namespace Components {
+    interface EmersonAvatar {
+        "active": boolean;
+        "alt": string;
+        "size": AvatarSize;
+        "src": string;
+    }
     interface EmersonBadgeComponent {
         "color": BadgeColor;
         "position": BadgePosition;
@@ -60,6 +68,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLEmersonAvatarElement extends Components.EmersonAvatar, HTMLStencilElement {
+    }
+    var HTMLEmersonAvatarElement: {
+        prototype: HTMLEmersonAvatarElement;
+        new (): HTMLEmersonAvatarElement;
+    };
     interface HTMLEmersonBadgeComponentElement extends Components.EmersonBadgeComponent, HTMLStencilElement {
     }
     var HTMLEmersonBadgeComponentElement: {
@@ -103,6 +117,7 @@ declare global {
         new (): HTMLSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
+        "emerson-avatar": HTMLEmersonAvatarElement;
         "emerson-badge-component": HTMLEmersonBadgeComponentElement;
         "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
@@ -113,6 +128,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface EmersonAvatar {
+        "active"?: boolean;
+        "alt"?: string;
+        "size"?: AvatarSize;
+        "src"?: string;
+    }
     interface EmersonBadgeComponent {
         "color"?: BadgeColor;
         "position"?: BadgePosition;
@@ -162,6 +183,7 @@ declare namespace LocalJSX {
         "header"?: string;
     }
     interface IntrinsicElements {
+        "emerson-avatar": EmersonAvatar;
         "emerson-badge-component": EmersonBadgeComponent;
         "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
@@ -175,6 +197,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emerson-avatar": LocalJSX.EmersonAvatar & JSXBase.HTMLAttributes<HTMLEmersonAvatarElement>;
             "emerson-badge-component": LocalJSX.EmersonBadgeComponent & JSXBase.HTMLAttributes<HTMLEmersonBadgeComponentElement>;
             "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
